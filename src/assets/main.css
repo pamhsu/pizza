@@ -1,0 +1,1011 @@
+/* ==============================
+   全域基本設定
+============================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+
+    background-color: #f5f0e6;
+    color: #212529;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* ==============================
+   整體頁面
+============================== */
+
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+}
+
+/* ==============================
+   Navbar 導覽列
+============================== */
+
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.nav-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.nav-logo {
+    width: 63px;
+    height: 63px;
+    object-fit: contain;
+}
+
+.nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 700;
+    color: #4A4435;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    position: relative;
+    color: #495057;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #73612C;
+}
+
+.nav-links .router-link-active {
+    color: #73612C;
+}
+
+.nav-links .router-link-exact-active {
+    color: #73612C;
+    font-weight: 700;
+}
+
+.nav-links .router-link-exact-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #73612C;
+    border-radius: 50px;
+}
+
+.nav-user {
+    color: #73612C;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    padding: 0 8px;
+}
+
+.nav-logout {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    background: transparent;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    box-shadow: none;
+}
+
+.nav-logout:hover {
+    background: #693335;
+    color: white;
+    border-color: #693335;
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-login-btn {
+    height: 38px;
+    width: 80px;
+    padding: 0 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #73612C;
+    color: #73612C;
+    background: transparent;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-login-btn:hover {
+    background: #e9e2cf;
+    color: #4A4435;
+}
+
+.nav-register-btn {
+    height: 38px;
+    width: 80px;
+    padding: 0 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #73612C;
+    background: #ffffff;
+    color: #73612C;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    transition: background 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-register-btn:hover {
+    background: #e9e2cf;
+    border-color: #4A4435;
+}
+
+/* ==============================
+   Hero 區域
+============================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+    margin-top: 0;
+}
+
+.hero p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   Logo
+============================== */
+
+.course-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 14px;
+}
+
+/* ==============================
+   小標題
+============================== */
+
+.eyebrow {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #73612C;
+}
+
+/* ==============================
+   一般卡片
+============================== */
+
+.card {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h2,
+.card h3 {
+    margin-top: 0;
+}
+
+/* ==============================
+   Banner
+============================== */
+
+.page > section:nth-of-type(2) {
+    margin-bottom: 32px;
+}
+
+.page > section:nth-of-type(2) img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+/* ==============================
+   商品列表
+============================== */
+
+.product-grid,
+.page > section.products,
+.page > section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* ==============================
+   商品卡片
+============================== */
+
+.product-card,
+.page article {
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.product-card:hover,
+.page article:hover {
+    transform: translateY(-5px);
+    border-color: #b6d4fe;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* ==============================
+   商品分類
+============================== */
+
+.product-card .badge,
+.page article span {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #73612C;
+    background-color: #ede8d8;
+    border-radius: 50px;
+}
+
+/* ==============================
+   商品名稱
+============================== */
+
+.product-card h3,
+.page article h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #212529;
+}
+
+/* ==============================
+   商品說明
+============================== */
+
+.product-card p,
+.page article p {
+    margin: 0 0 20px;
+    color: #6c757d;
+    font-size: 15px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+/* ==============================
+   商品價格
+============================== */
+
+.product-card strong,
+.page article strong {
+    display: block;
+    padding-top: 16px;
+    border-top: 1px solid #eeeeee;
+    color: #693335;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* ==============================
+   按鈕統一樣式
+   ============================== */
+
+button,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #73612C, #4A4435);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    box-shadow: 0 4px 10px rgba(115, 97, 44, 0.25);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(115, 97, 44, 0.35);
+    background: linear-gradient(135deg, #4A4435, #3d3520);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(115, 97, 44, 0.25);
+}
+
+button:disabled,
+.btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #73612C;
+    border: 2px solid #73612C;
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: #73612C;
+    color: white;
+    box-shadow: 0 4px 10px rgba(115, 97, 44, 0.25);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #693335, #a71d2a);
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.25);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #a71d2a, #7a1520);
+    box-shadow: 0 8px 18px rgba(220, 53, 69, 0.35);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    height: 34px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.btn-icon {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+}
+
+/* ==============================
+   購物車
+============================== */
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #dee2e6;
+}
+
+.cart-total {
+    font-size: 22px;
+    font-weight: 800;
+    color: #693335;
+}
+
+/* ==============================
+   表單
+============================== */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #212529;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #73612C;
+    box-shadow: 0 0 0 3px rgba(115, 97, 44, 0.15);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ==============================
+   訊息
+============================== */
+
+.notice,
+.alert {
+    padding: 14px 16px;
+    margin: 16px 0;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.error,
+.alert-error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.success,
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+/* ==============================
+   表格
+============================== */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+}
+
+/* ==============================
+   常用工具
+============================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mt-3 {
+    margin-top: 24px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.mb-3 {
+    margin-bottom: 24px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* ==============================
+   Vue
+============================== */
+
+[v-cloak] {
+    display: none;
+}
+
+
+/* ==============================
+   商品詳細頁
+============================== */
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 600;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: #73612C;
+    transform: translateX(-3px);
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.product-visual {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #ede8d8, #f0ebe1);
+}
+
+.product-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    font-size: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.visual-text {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+}
+
+.product-info .badge {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    color: #73612C;
+    background-color: #ede8d8;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.product-title {
+    margin: 0 0 8px;
+    color: #212529;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.product-id {
+    margin: 0;
+    color: #adb5bd;
+    font-size: 14px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: 28px 0;
+    background-color: #eeeeee;
+}
+
+.product-description {
+    margin: 0 0 32px;
+    color: #6c757d;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.price-area {
+    margin-bottom: 32px;
+}
+
+.price-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.product-price {
+    color: #693335;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.product-price small {
+    margin-right: 4px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.product-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.product-actions .btn {
+    min-width: 160px;
+    text-decoration: none;
+}
+
+.status-card {
+    max-width: 650px;
+    margin: 80px auto;
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.status-card h1,
+.status-card h2 {
+    margin: 16px 0 10px;
+}
+
+.status-card p {
+    color: #6c757d;
+}
+
+.status-card .error {
+    padding: 14px 16px;
+    border: 1px solid #f5c2c7;
+    border-radius: 10px;
+}
+
+.loading-icon,
+.status-icon {
+    font-size: 48px;
+}
+
+/* 商品詳細頁：平板 */
+@media (max-width: 768px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .product-visual {
+        min-height: 300px;
+    }
+
+    .product-info {
+        padding: 32px;
+    }
+
+    .product-title {
+        font-size: 30px;
+    }
+
+    .product-price {
+        font-size: 32px;
+    }
+}
+
+/* 商品詳細頁：手機 */
+@media (max-width: 576px) {
+    .product-info {
+        padding: 24px;
+    }
+
+    .product-visual {
+        min-height: 240px;
+    }
+
+    .product-icon {
+        width: 110px;
+        height: 110px;
+        font-size: 50px;
+    }
+
+    .product-title {
+        font-size: 26px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .product-actions .btn {
+        width: 100%;
+    }
+
+    .status-card {
+        margin: 40px auto;
+        padding: 40px 24px;
+    }
+}
+
+/* ==============================
+   平板
+============================== */
+
+@media (max-width: 768px) {
+    .page {
+        padding: 20px 16px 40px;
+    }
+
+    .navbar-inner {
+        padding: 14px 16px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .course-logo {
+        width: 72px;
+        height: 72px;
+    }
+
+    .product-grid,
+    .page > section.products,
+    .page > section:nth-of-type(3) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ==============================
+   手機
+============================== */
+
+@media (max-width: 576px) {
+    .navbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-grid,
+    .page > section.products,
+    .page > section:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card,
+    .page article {
+        min-height: auto;
+    }
+
+    button,
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ==============================
+   商品列表：固定一列 4 個
+============================== */
+
+.page > section.products {
+    margin-top: 48px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 992px) {
+    .page > section.products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page > section.products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .page > section.products {
+        grid-template-columns: 1fr;
+    }
+}

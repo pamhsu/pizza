@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "經典瑪格麗特",
+        "category": "經典口味",
+        "price": 280,
+        "description": "新鮮番茄醬、莫札瑞拉起司與羅勒葉，經典義式風味。"
+    },
+    {
+        "id": 2,
+        "name": "辣味義式香腸",
+        "category": "經典口味",
+        "price": 320,
+        "description": "搭配義式辣味香腸與切達起司，微辣口感令人回味。"
+    },
+    {
+        "id": 3,
+        "name": "海鮮總匯",
+        "category": "豪華系列",
+        "price": 420,
+        "description": "鮮蝦、魷魚、蛤蜊與花枝，滿滿海鮮一次滿足。"
+    },
+    {
+        "id": 4,
+        "name": "BBQ 烤雞披薩",
+        "category": "豪華系列",
+        "price": 380,
+        "description": "煙燻 BBQ 醬搭配嫩烤雞肉、洋蔥與青椒。"
+    },
+    {
+        "id": 5,
+        "name": "四種起司",
+        "category": "起司系列",
+        "price": 350,
+        "description": "莫札瑞拉、切達、帕瑪森與藍紋起司，起司控必點。"
+    },
+    {
+        "id": 6,
+        "name": "素食繽紛",
+        "category": "素食",
+        "price": 300,
+        "description": "新鮮時蔬搭配番茄醬與香草，清爽健康的選擇。"
+    },
+    {
+        "id": 7,
+        "name": "夏威夷風味",
+        "category": "經典口味",
+        "price": 300,
+        "description": "鳳梨、火腿與起司的經典組合，酸甜交織。"
+    },
+    {
+        "id": 8,
+        "name": "松露野菇",
+        "category": "豪華系列",
+        "price": 450,
+        "description": "黑松露醬搭配多種蘑菇與起司，奢華風味。"
+    }
+]

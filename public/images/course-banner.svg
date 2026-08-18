@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">public folder demo</title>
+  <desc id="desc">Vite public static asset example</desc>
+  <rect width="1200" height="360" rx="30" fill="#eeeeee"/>
+  <rect x="70" y="65" width="320" height="230" rx="24" fill="#ffffff" stroke="#222" stroke-width="4"/>
+  <text x="230" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#222">public/</text>
+  <text x="230" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#555">原樣提供</text>
+  <path d="M450 180h210" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <path d="M640 160l30 20-30 20" fill="none" stroke="#222" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="720" y="65" width="410" height="230" rx="24" fill="#ffffff" stroke="#222" stroke-width="4"/>
+  <text x="925" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#222">/images/...</text>
+  <text x="925" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#555">直接用網址存取</text>
+</svg>

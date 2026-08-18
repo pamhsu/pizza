@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Vite Assets Demo</title>
+  <rect width="160" height="160" rx="34" fill="#ffffff"/>
+  <path d="M37 35h86L80 128 37 35Z" fill="#e8e8e8" stroke="#222" stroke-width="5"/>
+  <circle cx="80" cy="76" r="18" fill="#fff" stroke="#222" stroke-width="5"/>
+  <path d="M80 58v36M62 76h36" stroke="#222" stroke-width="5" stroke-linecap="round"/>
+</svg>
