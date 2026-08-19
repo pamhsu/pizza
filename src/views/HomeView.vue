@@ -8,7 +8,30 @@ export default {
         { src: '/images/home2.png', alt: '披薩圖片 2' },
         { src: '/images/home3.png', alt: '披薩圖片 3' }
       ],
-      timer: null
+      timer: null,
+      newsList: [
+        {
+          id: 1,
+          image: '/images/onsale1.jpg',
+          year: '2026',
+          date: '08/10',
+          title: '新品上市：松露野菇披薩'
+        },
+        {
+          id: 2,
+          image: '/images/onsale2.jpg',
+          year: '2026',
+          date: '08/05',
+          title: '逢甲店開幕慶'
+        },
+        {
+          id: 3,
+          image: '/images/onsale3.jpg',
+          year: '2026',
+          date: '07/28',
+          title: '外送免運費活動'
+        }
+      ]
     }
   },
   methods: {
@@ -78,6 +101,25 @@ export default {
       <p>新鮮食材 - 每日嚴選優質原料</p>
       <p>手工製程 - 傳統義式工法，口感紮實</p>
       <p>快速外送 - 下單後 30 分鐘內送達</p>
+    </section>
+
+    <section class="news-section">
+      <div class="news-header">
+        <h2 class="news-title">最新消息</h2>
+        <span class="news-subtitle">News</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-card" v-for="news in newsList" :key="news.id">
+          <div class="news-img-wrap">
+            <img :src="news.image" :alt="news.title" class="news-img" />
+            <div class="news-badge">
+              <span class="badge-year">{{ news.year }}</span>
+              <span class="badge-date">{{ news.date }}</span>
+            </div>
+          </div>
+          <h3 class="news-card-title">{{ news.title }}</h3>
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -204,5 +246,127 @@ export default {
   background: #73612C;
   color: white;
   box-shadow: 0 4px 10px rgba(115, 97, 44, 0.25);
+}
+
+.news-section {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  clear: both;
+}
+
+.news-header {
+  text-align: center;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.news-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4A4435;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.news-subtitle {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #836539;
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+.news-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.news-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.news-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #c0392b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.badge-year {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.badge-date {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.news-card-title {
+  padding: 16px 18px 20px;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: #4A4435;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-title {
+    font-size: 28px;
+  }
 }
 </style>

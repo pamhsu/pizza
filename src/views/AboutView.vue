@@ -19,8 +19,59 @@
                 <img src="/images/pizzalogo.png" alt="FATTA A MANO" />
             </div>
         </section>
+
+        <section class="stores-section">
+            <h2 class="stores-title">分店資訊</h2>
+            <div class="stores-grid">
+                <div class="store-card" v-for="store in stores" :key="store.name">
+                    <img :src="store.image" :alt="store.branch" class="store-img" />
+                    <h3 class="store-name">{{ store.name }}</h3>
+                    <p class="store-branch">{{ store.branch }}</p>
+                    <div class="store-info">
+                        <p>📍 {{ store.address }}</p>
+                        <p>📞 {{ store.phone }}</p>
+                        <p>💬 Line: {{ store.line }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            stores: [
+                {
+                    name: "瑪米亞披薩 FATTA A MANO Pizza",
+                    branch: "遠雄店",
+                    address: "台中市東區復興路遠雄百貨商場號F1",
+                    phone: "04-2222299",
+                    line: "@rockypizza",
+                    image: "/images/store1.jpg"
+                },
+                {
+                    name: "瑪米亞披薩 FATTA A MANO Pizza",
+                    branch: "逢甲店",
+                    address: "台中市西屯區逢甲東路472號(401)",
+                    phone: "04-2222299",
+                    line: "@Mamaniapizza",
+                    image: "/images/store2.png"
+                },
+                {
+                    name: "瑪米亞披薩 FATTA A MANO Pizza",
+                    branch: "東海店",
+                    address: "台中市西屯區東海路472號(401)",
+                    phone: "04-2222299",
+                    line: "@Mamaniapizza",
+                    image: "/images/store3.jpg"
+                }
+            ]
+        }
+    }
+}
+</script>
 
 <style scoped>
 .about-layout {
@@ -118,6 +169,117 @@
 
     .about-text p {
         font-size: 15px;
+    }
+}
+
+.stores-section {
+    margin-top: 40px;
+}
+
+.stores-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 700;
+    color: #4A4435;
+    margin: 0 0 28px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.stores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.store-card {
+    padding: 28px 24px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.store-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.store-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 700;
+    color: #73612C;
+    margin: 0 0 4px;
+}
+
+.store-branch {
+    font-size: 22px;
+    font-weight: 800;
+    color: #4A4435;
+    margin: 0 0 16px;
+}
+
+.store-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.store-info p {
+    margin: 0;
+    color: #5a5347;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.store-social {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e8e3d9;
+}
+
+.social-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #73612C;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+    background: #73612C;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .stores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .stores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stores-title {
+        font-size: 28px;
     }
 }
 </style>

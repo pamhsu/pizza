@@ -26,7 +26,7 @@ export default {
     <section class="card">
       <div class="cart-header">
         <h2>購物車</h2>
-        <button v-if="!cartstore.isEmpty" class="btn btn-sm btn-danger" @click="clearAll">
+        <button v-if="!cartstore.isEmpty" class="btn btn-sm cart-clear-btn" @click="clearAll">
           清空購物車
         </button>
       </div>
@@ -52,7 +52,7 @@ export default {
             NT${{ (item.price * item.qty).toLocaleString() }}
           </div>
 
-          <button class="btn-icon btn-danger" @click="remove(item.id)">✕</button>
+          <button class="btn-icon cart-remove-btn" @click="remove(item.id)">✕</button>
         </li>
       </ul>
 
@@ -69,6 +69,30 @@ export default {
 </template>
 
 <style scoped>
+.cart-clear-btn {
+  background: #7B3F00;
+  color: white;
+  border: 1px solid #7B3F00;
+  box-shadow: none;
+}
+
+.cart-clear-btn:hover {
+  background: #5a2e00;
+  border-color: #5a2e00;
+}
+
+.cart-remove-btn {
+  background: #7B3F00;
+  color: white;
+  border: 1px solid #7B3F00;
+  box-shadow: none;
+}
+
+.cart-remove-btn:hover {
+  background: #5a2e00;
+  border-color: #5a2e00;
+}
+
 .cart-header {
   display: flex;
   align-items: center;
@@ -85,8 +109,16 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid #eeeeee;
+  padding: 18px 16px;
+  border-bottom: 1px solid #e8e3d9;
+  background-color: #faf7f2;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.cart-item:hover {
+  background-color: #f0ebe1;
 }
 
 .cart-item:last-child {
@@ -100,6 +132,7 @@ export default {
 .cart-item-info h3 {
   margin: 0 0 4px;
   font-size: 18px;
+  color: #7B3F00;
 }
 
 .cart-item-info p {
@@ -125,13 +158,13 @@ export default {
   text-align: right;
   font-size: 18px;
   font-weight: 800;
-  color: #dc3545;
+  color: #7B3F00;
 }
 
 .cart-summary {
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 2px solid #73612C;
+  border-top: 2px solid #836539;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -140,7 +173,7 @@ export default {
 .cart-total {
   font-size: 24px;
   font-weight: 800;
-  color: #dc3545;
+  color: #7B3F00;
   font-family: 'Playfair Display', serif;
 }
 
