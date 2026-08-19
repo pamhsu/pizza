@@ -15,7 +15,7 @@ export default {
           image: '/images/onsale1.jpg',
           year: '2026',
           date: '08/10',
-          title: '新品上市：松露野菇披薩'
+          title: '新品上市：雙心XO海鮮披薩'
         },
         {
           id: 2,
@@ -29,7 +29,7 @@ export default {
           image: '/images/onsale3.jpg',
           year: '2026',
           date: '07/28',
-          title: '外送免運費活動'
+          title: '超值199元活動'
         }
       ]
     }
@@ -104,10 +104,10 @@ export default {
     </section>
 
     <section class="news-section">
-      <div class="news-header">
+      <!-- <div class="news-header">
         <h2 class="news-title">最新消息</h2>
         <span class="news-subtitle">News</span>
-      </div>
+      </div> -->
       <div class="news-grid">
         <div class="news-card" v-for="news in newsList" :key="news.id">
           <div class="news-img-wrap">
@@ -318,8 +318,8 @@ export default {
 
 .news-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 5px;
+  right: 20px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
