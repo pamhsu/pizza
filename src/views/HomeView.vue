@@ -106,7 +106,6 @@ export default {
     <section class="news-section">
       <!-- <div class="news-header">
         <h2 class="news-title">最新消息</h2>
-        <span class="news-subtitle">News</span>
       </div> -->
       <div class="news-grid">
         <div class="news-card" v-for="news in newsList" :key="news.id">
@@ -318,8 +317,8 @@ export default {
 
 .news-badge {
   position: absolute;
-  top: 5px;
-  right: 20px;
+  top: 14px;
+  right: 14px;
   width: 60px;
   height: 60px;
   border-radius: 50%;

@@ -9,6 +9,11 @@ export default{
       memberstore:useMemberStore()
     }
   },
+  computed: {
+    isAdminLayout() {
+      return this.$route.meta.layout === 'admin'
+    }
+  },
   methods:{
     logout(){
       this.memberstore.logout()
@@ -20,7 +25,7 @@ export default{
 
 <template>
   <div>
-    <header class="navbar">
+    <header v-if="!isAdminLayout" class="navbar">
       <div class="navbar-inner">
         <div class="nav-brand-wrap">
           <img src="../public/images/pizzalogo.png" alt="Logo" class="nav-logo" />
