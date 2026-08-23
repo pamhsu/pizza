@@ -74,6 +74,11 @@
           <span v-if="!sidebarCollapsed">系統設定</span>
         </RouterLink>
       </nav>
+      <!-- 登出 -->
+      <button class="logout-btn" @click="logout">
+        登出
+      </button>
+
 
       <!-- Sidebar Footer -->
       <div v-if="!sidebarCollapsed" class="sidebar-footer">
@@ -154,9 +159,10 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 const sidebarCollapsed = ref(false)
 
@@ -179,6 +185,15 @@ const pageTitle = computed(() => {
 
   return titles[route.path] || '後台管理'
 })
+
+// 登出
+const logout = () => {
+  // 清除登入狀態
+  localStorage.removeItem("adminToken")
+  
+  // 回到後台登入頁
+  router.push("/admin/login")
+}
 </script>
 
 <style scoped>
@@ -350,6 +365,42 @@ const pageTitle = computed(() => {
 
 .sidebar-collapsed .menu-icon {
   margin-right: 0;
+}
+
+/*logout*/
+.logout-btn {
+  width: 100%;
+  padding: 11px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+
+  background: transparent;
+  color: #e8dfd3;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #a66a45;
+  border-color: #a66a45;
+  color: #fffaf4;
+
+  transform: translateY(-1px);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
 }
 
 /* Footer */
@@ -606,4 +657,5 @@ const pageTitle = computed(() => {
     padding: 0 16px 30px;
   }
 }
+
 </style>

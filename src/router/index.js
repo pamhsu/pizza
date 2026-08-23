@@ -49,18 +49,38 @@ const routes = [
     component: () => import("../views/RegisterView.vue"),
     meta: { layout: "default" }
   },
+{
+  path: "/admin/login",
+  name: "adminLogin",
+  component: () => import("../admin/views/AdminLogin.vue"),
+  meta: { layout: "default" }
+},
   {
     path: "/admin",
     name:"admin",
     component: () => import("../admin/views/adminlayout.vue"),
     meta: { layout: "admin" },
     children: [
-      { path: "", redirect: "dashboard" },
-      { path: "dashboard", name: "adminDashboard", component: () => import("../admin/views/Dashboard.vue") },
-      { path: "members", name: "adminMembers", component: () => import("../admin/views/Members.vue") },
-      { path: "products", name: "adminProducts", component: () => import("../admin/views/AdminProducts.vue") },
-      { path: "news", name: "adminNews", component: () => import("../admin/views/AdminNews.vue") },
-      { path: "settings", name: "adminSettings", component: () => import("../admin/views/AdminSettings.vue") }
+      // /admin → /admin/login
+      {
+        path: "",
+        redirect: "/admin/login"
+      },  
+      { path: "dashboard", 
+        name: "adminDashboard", 
+        component: () => import("../admin/views/Dashboard.vue") },
+      { path: "members", 
+        name: "adminMembers", 
+        component: () => import("../admin/views/Members.vue") },
+      { path: "products", 
+        name: "adminProducts", 
+        component: () => import("../admin/views/AdminProducts.vue") },
+      { path: "news", 
+        name: "adminNews", 
+        component: () => import("../admin/views/AdminNews.vue") },
+      { path: "settings", 
+        name: "adminSettings", 
+        component: () => import("../admin/views/AdminSettings.vue") }
     ]
   }
 ]
@@ -68,6 +88,21 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem("adminToken")
+
+  if (
+    to.path.startsWith("/admin") &&
+    to.path !== "/admin/login" &&
+    !token
+  ) {
+    next("/admin/login")
+    return
+  }
+
+  next()
 })
 
 export default router
